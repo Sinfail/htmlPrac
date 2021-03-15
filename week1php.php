@@ -13,8 +13,13 @@
 echo "hello world";
 $bruh = "this is a variable test";
 
+$var2 = "test";
+
 echo $bruh;
 echo '<br>';
+
+define(YOOOTEST, 'bruh');
+
 
 ?>
 </body>

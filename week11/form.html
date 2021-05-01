@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+</head>
+
+<body>
+
+
+
+    <form method="post" action="<php> echo htmlspecialchars($_SERVER['PHP_SELF']);?</php>">
+
+    Email: <input type = 'text' name = 'email'><br>
+    Password: <input type = 'text' name = 'email'><br>
+    Re-Enter Password: <input type = 'text' name = 'email'><br>
+    DOB: <input type = 'date' name = 'Date'><br>
+<input type = 'submit'>
+</form>
+
+<php>
+
+
+    // define variables and set to empty values
+    $name = $email = "";
+    
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      $name = test_input($_POST["name"]);
+      $email = test_input($_POST["email"]);
+      $website = test_input($_POST["website"]);
+      $comment = test_input($_POST["comment"]);
+      $gender = test_input($_POST["gender"]);
+    }
+    
+    function test_input($data) {
+      $data = trim($data);
+      $data = stripslashes($data);
+      $data = htmlspecialchars($data);
+      return $data;
+    }
+
+
+</php>
+
+
+
+</body>
+
+
+
+
+
+</html>
